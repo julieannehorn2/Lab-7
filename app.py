@@ -6,8 +6,8 @@ from sklearn.metrics import mean_squared_error
 import openpyxl
 
 # Load the dataset
-file_path = "AmesHousing.xlsx"
-df = pd.read_excel(file_path)
+file_path = "AmesHousing.csv"
+df = pd.read_csv(file_path)
 
 # Select relevant features and target variable (modify based on dataset columns)
 selected_features = ['Overall Qual', 'Gr Liv Area', 'Garage Cars', 'Total Bsmt SF', 'Full Bath', 'Year Built']
@@ -43,7 +43,7 @@ def user_input_features():
     Total_Bsmt_SF = st.sidebar.slider('Total Basement Size (sq ft)', 0, 3000, 1000)
     Full_Bath = st.sidebar.slider('Full Bathrooms', 0, 4, 2)
     Year_Built = st.sidebar.slider('Year Built', 1800, 2023, 2000)
-   
+    
     data = {
         'Overall Qual': Overall_Qual,
         'Gr Liv Area': Gr_Liv_Area,
